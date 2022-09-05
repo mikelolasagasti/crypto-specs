@@ -11,7 +11,7 @@ Version:                1.2.0
 %global common_description %{expand:
 CIRCL: Cloudflare Interoperable Reusable Cryptographic Library.}
 
-%global golicenses      LICENSE
+%global golicenses      LICENSE ecc-p384-LICENSE
 %global godocs          README.md
 
 Name:           %{goname}
@@ -34,6 +34,7 @@ Source:         %{gosource}
 
 %install
 %gopkginstall
+mv ecc/p384/LICENSE ecc-p384-LICENSE
 
 %if %{with check}
 %check
